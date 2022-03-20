@@ -19,19 +19,24 @@ export const bubbleSort = (arr) => {
 
   let iterations = 0, comparisons = 0, writes = 0;
 
+  //идем циклом по массиву
   for(let i = 0; i < arr.length; i++) {
 
     iterations++;
 
+    /*
+    внутри запускаем второй цикл, который заканчивается на i - 1 первого цикла,
+    т.к. в результате свапа на каждой итерации самый большой элемент ставится в конец
+    */
     for(let j = 0; j < arr.length - i - 1; j++) {
 
       iterations++;
       comparisons++;
-
+      //сравниваем текущий элемент и следующий
       if(arr[j] > arr[j + 1]) {
 
         writes++;
-
+        //меняем местами если 
         [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
       }
     }

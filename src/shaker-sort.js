@@ -21,45 +21,48 @@ export const shakerSort = (arr) => {
   startLog('Shaker sort');
 
   let iterations = 0, comparisons = 0, writes = 0;
-
-  let control = arr.length - 1;
+  //сдвиг с начала
   let left = 0;
+  //сдвиг с конца
   let right = arr.length - 1;
 
+  //запускаем цикл пока left не достигнет right, т.е. не дойдет до середины
+  
   do {
 
     iterations++;
 
+    //идем циклом слева направо
     for(let i = left; i < right; i++) {
 
       iterations++; comparisons++;
 
+      //если последющий больше предыдущего
       if(arr[i] > arr[i + 1]) {
 
         writes++;
-
+        //меняем местами
         [arr[i], arr[i + 1]] = [arr[i + 1], arr[i]];
-        control = i;
       }
     }
-    right = control;
+    left++;
+    //запускаем цикл с конца в начало
     for(let i = right; i > left; i--) {
 
       iterations++; comparisons++;
 
+      //если предыдущий больше текущего
       if(arr[i] < arr[i - 1]) {
 
         writes++;
-
+        //меняем местами
         [arr[i - 1], arr[i]] = [arr[i], arr[i - 1]];
-        control = i;
       }
     }
-    left = control;
+    //левый сдвиг становится дошедшей позицией для след прохода
+    right--;
 
-    comparisons++;
-
-  } while (left < right)
+  } while (left < right);
 
   endLog(iterations, comparisons, writes);
 }

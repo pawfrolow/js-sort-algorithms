@@ -12,26 +12,22 @@ export const insertionSort = (arr) => {
 
   let iterations = 0, comparisons = 0, writes = 0;
 
+  //стартуем цикл по массиву
   for(let i = 0; i < arr.length; i++) {
 
     iterations++;
     
-    let current = arr[i];
     let j = i - 1;
 
-    comparisons++;
+    //идем в обратном порядке от текущего пока предыдыдущий больше текущего
+    while(j >= 0 && arr[j] > arr[j + 1]) {
 
-    while(j >= 0 && arr[j] > current) {
+      iterations++; writes++; comparisons++;
 
-      iterations++; writes++;
-
-      arr[j + 1] = arr[j];
+      //сдвигаем массив вперед
+      [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
       j--;
     }
-
-    writes++;
-
-    arr[j + 1] = current;
   }
 
   endLog(iterations, comparisons, writes);

@@ -2,33 +2,46 @@ import { shakerSort } from './shaker-sort';
 import { bubbleSort } from './bubble-sort';
 import { oddEvenSort } from './odd-even-sort';
 import { insertionSort } from './insertion-sort';
-import { bogoSort } from './bogo-sort';
+import { bozoSort } from './bozo-sort';
 import { selectionSort } from './selection-sort';
 import { copy } from './utils';
 import { gnomeSort } from './gnome-sort';
+import { combSort } from './comb-sort';
+import { shellSort } from './shell-sort';
+import { countingSort } from './counting-sort';
 
-const arraySize = 50000;
-const arrayValueMax = 50000;
+const arraySize = 20000;
+const arrayValueMax = 20;
 
 const array = [...Array(arraySize)].map(() => Math.floor(Math.random() * arrayValueMax));
 
-//console.log(array);
+console.log(array);
 
-//обменные
+//-------обменные-------
 
-bubbleSort(copy(array));
+//пузырьковая и модификации
+/* bubbleSort(copy(array));
+combSort(copy(array));
 shakerSort(copy(array));
+
+
 oddEvenSort(copy(array));
 gnomeSort(copy(array));
 
-//вставками
-
+//-------вставками-------
 insertionSort(copy(array));
+shellSort(copy(array));
 
-//выборка
+//-------выборка---------
 
-selectionSort(copy(array));
+selectionSort(copy(array)); */
 
-//ебаные
+//-------слияние---------
 
-//bogoSort(copy(array))
+//-------без сравнений---
+
+countingSort(copy(array));
+
+//-------непрактичные----
+
+//bozoSort(copy(array))

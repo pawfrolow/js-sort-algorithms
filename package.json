@@ -11,6 +11,10 @@
   "license": "ISC",
   "type": "module",
   "dependencies": {
-    "chalk": "^4.1.2"
+    "chalk": "^4.1.2",
+    "cli-spinners": "^2.6.1",
+    "install": "^0.13.0",
+    "npm": "^8.5.1",
+    "ora": "^6.1.0"
   }
 }

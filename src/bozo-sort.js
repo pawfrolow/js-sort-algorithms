@@ -1,7 +1,7 @@
 import { endLog, startLog } from "./utils";
 
-export const bogoSort = (arr) => {
-  startLog('Bogo sort');
+export const bozoSort = (arr) => {
+  startLog('Bozo sort');
 
   let iterations = 0, comparisons = 0, writes = 0;
 
